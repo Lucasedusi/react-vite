@@ -4,13 +4,6 @@
 	border-radius: 8px;
 }
 
-header .avatar {
-	width: calc(3rem + 12px);
-	height: calc(3rem + 12px);
-	border-radius: 8px;
-	border: 2px solid var(--green-500);
-}
-
 .post + .post {
 	margin-top: 2rem;
 }
