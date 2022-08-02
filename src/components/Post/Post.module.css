@@ -112,3 +112,7 @@ header .avatar {
 .commentForm button[type="submit"]:hover {
 	opacity: 0.8;
 }
+
+.commentList {
+	margin-top: 2rem;
+}
