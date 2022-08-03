@@ -10,7 +10,7 @@ const posts = [
 		id: 1,
 		author: {
 			avatarUrl: "https://github.com/lucasedusi.png",
-			name: "José",
+			name: "Lucas Eduardo",
 			rule: "Mobile Developer",
 		},
 		content: [
@@ -25,6 +25,27 @@ const posts = [
 			},
 		],
 		publishedAt: new Date("2022-08-03 14:23:45"),
+	},
+
+	{
+		id: 1,
+		author: {
+			avatarUrl: "https://github.com/diego3g.png",
+			name: "Diego",
+			rule: "Web Developer",
+		},
+		content: [
+			{
+				type: "paragraph",
+				content:
+					"Fala galeraa 👋 Acabei de subir mais um projeto no meu portifa",
+			},
+			{
+				type: "paragraph",
+				content: "É um projeto que fiz no NLW Return, evento da Rocketseat",
+			},
+		],
+		publishedAt: new Date("2022-08-01 11:23:45"),
 	},
 ];
 
