@@ -38,8 +38,10 @@ export function Post({ author, content, publishedAt }) {
 		setNewCommentText(value);
 	}
 
-	function handleRemoveComment() {
-		const removeComment = comments.filter((comment) => comment.id !== id);
+	function deleteComment() {
+		const removeComment = comments.splice(
+			(comment) => comment.content !== content
+		);
 
 		setComments(removeComment);
 	}
@@ -82,7 +84,7 @@ export function Post({ author, content, publishedAt }) {
 
 			<div className={styles.commentList}>
 				{comments.map((comment) => {
-					return <Comment content={comment} />;
+					return <Comment content={comment} onDeleteComment={deleteComment} />;
 				})}
 			</div>
 		</article>

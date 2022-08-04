@@ -37,12 +37,11 @@ const posts = [
 		content: [
 			{
 				type: "paragraph",
-				content:
-					"Fala galeraa 👋 Acabei de subir mais um projeto no meu portifa",
+				content: "Fala galeraa",
 			},
 			{
 				type: "paragraph",
-				content: "É um projeto que fiz no NLW Return, evento da Rocketseat",
+				content: "É um projeto que fiz no NLW Return",
 			},
 		],
 		publishedAt: new Date("2022-08-01 11:23:45"),
