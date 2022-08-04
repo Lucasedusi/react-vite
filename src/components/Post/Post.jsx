@@ -38,6 +38,12 @@ export function Post({ author, content, publishedAt }) {
 		setNewCommentText(value);
 	}
 
+	function handleRemoveComment() {
+		const removeComment = comments.filter((comment) => comment.id !== id);
+
+		setComments(removeComment);
+	}
+
 	return (
 		<article className={styles.post}>
 			<header>
@@ -55,8 +61,8 @@ export function Post({ author, content, publishedAt }) {
 			</header>
 
 			<div className={styles.content}>
-				{content.map((line) => {
-					return <p>{line.content}</p>;
+				{content.map((line, index) => {
+					return <p key={index}>{line.content}</p>;
 				})}
 			</div>
 
