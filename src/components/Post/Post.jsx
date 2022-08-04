@@ -9,7 +9,8 @@ import ptBr from "date-fns/locale/pt-BR";
 import styles from "./Post.module.css";
 
 export function Post({ author, content, publishedAt }) {
-	const [comments, setComments] = useState([1, 2]);
+	const [comments, setComments] = useState([]);
+	const [newCommentText, setNewCommentText] = useState("");
 
 	const publishedDateFormatted = format(
 		publishedAt,
@@ -24,10 +25,17 @@ export function Post({ author, content, publishedAt }) {
 		addSuffix: true,
 	});
 
-	function handleSubmit() {
+	function handleCreateNewComment() {
 		event.preventDefault();
 
-		setComments([...comments, comments.length + 1]);
+		setComments([...comments, newCommentText]);
+		setNewCommentText("");
+	}
+
+	function handleChangeNewComment() {
+		const { value } = event.target;
+
+		setNewCommentText(value);
 	}
 
 	return (
@@ -52,10 +60,14 @@ export function Post({ author, content, publishedAt }) {
 				})}
 			</div>
 
-			<form onSubmit={handleSubmit} className={styles.commentForm}>
+			<form onSubmit={handleCreateNewComment} className={styles.commentForm}>
 				<strong>Deixe seu Feedback</strong>
 
-				<textarea />
+				<textarea
+					name="comments"
+					value={newCommentText}
+					onChange={handleChangeNewComment}
+				/>
 
 				<footer>
 					<button type="submit">Comentar</button>
@@ -64,7 +76,7 @@ export function Post({ author, content, publishedAt }) {
 
 			<div className={styles.commentList}>
 				{comments.map((comment) => {
-					return <Comment />;
+					return <Comment content={comment} />;
 				})}
 			</div>
 		</article>
