@@ -38,9 +38,9 @@ export function Post({ author, content, publishedAt }) {
 		setNewCommentText(value);
 	}
 
-	function deleteComment() {
-		const removeComment = comments.splice(
-			(comment) => comment.content !== content
+	function deleteComment(commentToDelete) {
+		const removeComment = comments.filter(
+			(comment) => comment !== commentToDelete
 		);
 
 		setComments(removeComment);
